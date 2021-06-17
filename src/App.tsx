@@ -1,6 +1,7 @@
 import{ createGlobalStyle } from 'styled-components';
 import Routes from './routes';
-
+import store from './store'
+import { Provider } from 'react-redux'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -16,10 +17,10 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <GlobalStyle/>
       <Routes />
-    </>
+    </Provider>
   );
 }
 
